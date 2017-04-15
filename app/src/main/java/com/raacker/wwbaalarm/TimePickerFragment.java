@@ -19,7 +19,7 @@ public class TimePickerFragment extends DialogFragment
         TextView tv = (TextView)getActivity().findViewById(R.id.time);
         this.hour = hourOfDay;
         this.minute = minute;
-        tv.setText(getResources().getString(R.string.alarm_time) +
+        tv.setText(getResources().getString(R.string.alarm_time) + " " +
                 String.valueOf(hourOfDay) + " : " + String.valueOf(minute));
     }
 

@@ -6,6 +6,9 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ToggleButton;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Map;
 
@@ -42,6 +46,7 @@ public class AlarmMainActivity extends AppCompatActivity implements View.OnClick
         timePickerFragment = new TimePickerFragment();
         set_alarm.setOnClickListener(this);
         set_time.setOnClickListener(this);
+
     }
 
     @Override
@@ -84,7 +89,7 @@ public class AlarmMainActivity extends AppCompatActivity implements View.OnClick
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, timePickerFragment.getHour());
         calendar.set(Calendar.MINUTE, timePickerFragment.getMinute());
-        calendar.set(Calendar.SECOND, calendar.get(Calendar.SECOND) + 10);
+        calendar.set(Calendar.SECOND, 10);
         calendar.set(Calendar.MILLISECOND, 0);
 
         long bTime = calendar.getTimeInMillis();
