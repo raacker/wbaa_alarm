@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,10 +14,18 @@
         android:layout_marginTop="20dp"
         android:background="@mipmap/wbaa_logo"/>
 
+    <TableLayout
+        android:id="@+id/alarm_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:stretchColumns="0"/>
+
     <TextView
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/alarm_list"
         android:textSize="20dp"
         android:text="@string/alarm_time" />
 
@@ -25,17 +33,21 @@
         android:id="@+id/set_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/time"
         android:text="@string/set_time" />
 
     <Button
         android:id="@+id/set_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/set_time"
         android:text="@string/set_alarm" />
 
     <LinearLayout
+        android:id="@+id/day_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/set_alarm"
         android:gravity="center"
         android:layout_gravity="center"
         android:orientation="horizontal">
@@ -100,6 +112,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/day_list"
         android:layout_margin="20dp"
         android:layout_gravity="center"
         android:orientation="vertical">
@@ -118,4 +131,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
